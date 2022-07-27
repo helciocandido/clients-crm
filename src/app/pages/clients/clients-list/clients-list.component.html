@@ -1,1 +1,40 @@
-<p>clients-list works!</p>
+<div class="card w-100 my-5">
+  <div class="card-body">
+    <h2 class="card-title text-center">Clientes</h2>
+    <button routerLink="/add-client" class="btn btn-success mb-4 float-end">Novo</button>
+
+    <table class="table">
+      <thead>
+        <tr class="text-center">
+          <th>id</th>
+          <th>Nome</th>
+          <th>Cnpj</th>
+          <th>Endereço</th>
+          <th>Telefone</th>
+          <th>Razão Social</th>
+          <th>Outros</th>
+          <th colspan="2">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td>1</td>
+        <td>Todoplano Filmmaking</td>
+        <td>30.275.760/0001-72</td>
+        <td>Travessa Farias, 45</td>
+        <td>92981554075</td>
+        <td>Flavio Gomes Moura 98024442272</td>
+        <td>IM: 4568</td>
+        <td>
+          <span>
+            <button type="button" class="btn btn-primary btn-sm">Editar</button>
+          </span>
+        </td>
+        <td>
+          <span>
+            <button type="button" class="btn btn-danger btn-sm">Excluir</button>
+          </span>
+        </td>
+      </tbody>
+    </table>
+  </div>
+</div>
