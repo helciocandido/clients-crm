@@ -14,7 +14,11 @@ const routes: Routes = [
     component: ClientsListComponent,
   },
   {
-    path: 'add-client',
+    path: 'clients/new',
+    component: ClientFormComponent,
+  },
+  {
+    path: 'clients/info/:id',
     component: ClientFormComponent,
   },
 ];
