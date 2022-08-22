@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CnpjPipe } from './components/shared/pipe/cnpj.pipe';
 import { TelPipe } from './components/shared/pipe/tel.pipe';
 import { TextMaskModule } from 'angular2-text-mask';
+import { ClientModalModule } from './pages/clients/client-modal/client-modal.module';
+import { ClientModalComponent } from './pages/clients/client-modal/client-modal.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +32,9 @@ import { TextMaskModule } from 'angular2-text-mask';
     FormsModule,
     ReactiveFormsModule,
     TextMaskModule,
+    ClientModalModule,
   ],
-  providers: [],
+  providers: [ClientModalComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

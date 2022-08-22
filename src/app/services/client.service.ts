@@ -51,4 +51,8 @@ export class ClientService {
   deleteClient(id: number, client: Client): Observable<Client> {
     return this.httpClient.post<Client>(`${this.apiUrl}/delete/${id}`, client);
   }
+
+  showClient(id: number): Observable<[]> {
+    return this.httpClient.get<[]>(`${this.apiUrl}/info/${id}`);
+  }
 }
