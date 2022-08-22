@@ -3,14 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ClientModalComponent } from './client-modal.component';
 
 @NgModule({
-  declarations: [
-   ClientModalComponent
-  ],
-  imports: [
-    CommonModule,
-  ],
-  exports: [
-   ClientModalComponent,
-  ]
+  declarations: [ClientModalComponent],
+  imports: [CommonModule],
+  exports: [ClientModalComponent],
 })
 export class ClientModalModule {}
