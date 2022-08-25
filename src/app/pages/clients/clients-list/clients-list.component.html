@@ -1,7 +1,10 @@
 <div class="card w-100 my-5">
   <div class="card-body">
     <h2 class="card-title text-center">Clientes</h2>
-    <button routerLink="/clients/new" class="btn btn-success mb-4 float-end">Novo</button>
+    <crm-spinner></crm-spinner>
+    <button routerLink="/clients/new" class="btn btn-success mb-4 float-end">
+      <fa-icon [icon]="faPlus"></fa-icon>
+    </button>
 
     <table class="table">
       <thead>

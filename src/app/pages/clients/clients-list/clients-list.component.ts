@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { SpinnerService } from 'src/app/components/shared/spinner/spinner.service';
 import { Client } from 'src/app/models/client';
 import { ClientService } from 'src/app/services/client.service';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'crm-clients-list',
@@ -8,6 +10,7 @@ import { ClientService } from 'src/app/services/client.service';
   styleUrls: ['./clients-list.component.css'],
 })
 export class ClientsListComponent implements OnInit {
+  faPlus = faPlus;
   clients: Array<Client> = [];
   client: Client = {
     id: 0,
@@ -37,6 +40,11 @@ export class ClientsListComponent implements OnInit {
   deleteClient(id: number, client: Client): void {
     this.clienteService.deleteClient(id, client).subscribe({
       next: () => this.getClients(),
+      complete: () => {
+        this.clienteService.updateId(id).subscribe({
+          next: () => this.getClients(),
+        });
+      },
       error: (error) => console.log('ERROR: ', error),
     });
   }

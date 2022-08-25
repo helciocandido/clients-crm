@@ -23,7 +23,6 @@ export class ClientService {
   }
 
   // Salva cliente no banco CREATE
-  private clientRow: Array<[]> = [];
 
   postClient(client: Client[]): Observable<Client[]> {
     return this.httpClient.post<Client[]>(
@@ -42,6 +41,13 @@ export class ClientService {
     );
   }
 
+  updateId(id: number): Observable<Client> {
+    return this.httpClient.post<Client>(
+      `${this.apiUrl}/update/${id}`,
+      this.httpOptions
+    );
+  }
+
   //Lista cliente único
   getClient(id: string): Observable<Client[]> {
     return this.httpClient.get<Client[]>(`${this.apiUrl}/info/${id}`);
@@ -50,9 +56,5 @@ export class ClientService {
   // Exclui o cliente do banco DELETE
   deleteClient(id: number, client: Client): Observable<Client> {
     return this.httpClient.post<Client>(`${this.apiUrl}/delete/${id}`, client);
-  }
-
-  showClient(id: number): Observable<[]> {
-    return this.httpClient.get<[]>(`${this.apiUrl}/info/${id}`);
   }
 }
